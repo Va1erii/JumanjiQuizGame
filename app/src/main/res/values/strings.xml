@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">JumanjiQuiz</string>
+
+    <!-- LauncherActivity -->
+    <string name="app_title">Jumanji</string>
+    <string name="app_subtitle">Quiz game</string>
+    <string name="tools_jumangi_quote">A game for those who seek to find a way to leave their world behind</string>
+    <string name="start_button">Start</string>
+    <string-array name="jumangi_quote">
+        <item>A</item>
+        <item>game</item>
+        <item>for</item>
+        <item>those</item>
+        <item>who</item>
+        <item>seek</item>
+        <item>to</item>
+        <item>find</item>
+        <item>a</item>
+        <item>way</item>
+        <item>to</item>
+        <item>leave</item>
+        <item>their</item>
+        <item>world</item>
+        <item>behind</item>
+    </string-array>
+
+
+</resources>

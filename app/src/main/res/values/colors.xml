@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#42592b</color>
+    <color name="colorPrimaryDark">#42592b</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorTextTitle">#d8da761d</color>
+    <color name="colorTextSubTitle">#d8b3251e</color>
+    <color name="colorTextJumanji">#d8da761d</color>
+    <color name="colorTextJumanjiStartButton">#f6da761d</color>
+    <color name="colorSelectTextJumanji">#d8dac71d</color>
+
+</resources>
