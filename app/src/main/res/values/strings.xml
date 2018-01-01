@@ -24,5 +24,12 @@
         <item>behind</item>
     </string-array>
 
+    <!-- MainActivity -->
+    <string name="score">Score</string>
+    <string name="stage_1">Stage 1</string>
+    <string name="stage_2">Stage 2</string>
+    <string name="stage_3">Stage 3</string>
+    <string name="stage_4">Stage 4</string>
+
 
 </resources>
