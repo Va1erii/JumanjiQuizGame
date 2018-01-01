@@ -62,13 +62,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                android:id="@+id/btn_stage_1"
                 android:layout_width="0dp"
                 android:layout_weight="8"
                 android:layout_height="wrap_content"
                 android:text="@string/stage_1"
                 android:textAllCaps="true"
-                android:textAlignment="center"
+                android:background="@android:color/transparent"
                 style="@style/TextJumanji"
                 android:textColor="@color/colorTextSubTitle"/>
 
@@ -90,13 +91,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                android:id="@+id/btn_stage_2"
                 android:layout_width="0dp"
                 android:layout_weight="8"
                 android:layout_height="wrap_content"
                 android:text="@string/stage_2"
                 android:textAllCaps="true"
-                android:textAlignment="center"
+                android:background="@android:color/transparent"
                 style="@style/TextJumanji"
                 android:textColor="@color/colorTextSubTitle"/>
 
@@ -118,13 +120,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                android:id="@+id/btn_stage_3"
                 android:layout_width="0dp"
                 android:layout_weight="8"
                 android:layout_height="wrap_content"
-                android:textAllCaps="true"
-                android:textAlignment="center"
                 android:text="@string/stage_3"
+                android:textAllCaps="true"
+                android:background="@android:color/transparent"
                 style="@style/TextJumanji"
                 android:textColor="@color/colorTextSubTitle"/>
 
@@ -146,13 +149,14 @@
             android:layout_marginBottom="40dp"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                android:id="@+id/btn_stage_4"
                 android:layout_width="0dp"
                 android:layout_weight="8"
                 android:layout_height="wrap_content"
-                android:textAllCaps="true"
-                android:textAlignment="center"
                 android:text="@string/stage_4"
+                android:textAllCaps="true"
+                android:background="@android:color/transparent"
                 style="@style/TextJumanji"
                 android:textColor="@color/colorTextSubTitle"/>
 

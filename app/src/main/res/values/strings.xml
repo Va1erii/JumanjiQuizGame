@@ -31,5 +31,37 @@
     <string name="stage_3">Stage 3</string>
     <string name="stage_4">Stage 4</string>
 
+    <!-- HeroesActivity Shelly-->
+    <string name="shelly">Professor Sheldon \"Shelly\" Oberon</string>
+    <string name="shelly_strengths">strengths:\n\ncartography\narcheology\npaleontology</string>
+    <string name="shelly_weakness">weakness:\n\nendurance</string>
+    <string name="shelly_history">Jumanji is a dangerous place, be careful. You are a cartographer.
+        And you should find a key that opens a door to your home.
+    </string>
+
+    <!-- HeroesActivity Shelly-->
+    <string name="ruby">Ruby Roundhouse</string>
+    <string name="ruby_strengths">strengths:\n\nkarate\nt\'ai chi\naikido\ndance fighting</string>
+    <string name="ruby_weakness">weakness:\n\nvenom</string>
+    <string name="ruby_history">Professor \"Shelly\" found the key, it is a jaguar\'s jewel. You are a killer. Your group is
+        going to the \"Jaguar\'s Eye\" mount, but enemies are coming. You should protect your group.
+    </string>
+
+    <!-- HeroesActivity Franklin-->
+    <string name="franklin">Franklin \"Mouse\" Finbar</string>
+    <string name="franklin_strengths">strengths:\n\nzoology\nweapons wallet</string>
+    <string name="franklin_weakness">weakness:\n\ncake\nspeed\nstrength</string>
+    <string name="franklin_history">Your group found the place where is the \"Jaguar\'s Eye\". You are
+        a zoologist. Your group is moving in jumanji\'s jungle. There live dangerous animals which want to eat you.
+        You should recommend your group how you can survive.
+    </string>
+
+    <!-- HeroesActivity Bravestone-->
+    <string name="bravestone">Dr. Smolder Bravestone</string>
+    <string name="bravestone_strengths">strengths:\n\fearless\nclimbing\nspeed\nboomerang\nsmoldering intensity</string>
+    <string name="bravestone_weakness">weakness:\nnone</string>
+    <string name="bravestone_history">You almost finished your quest. You are archaeologist and explorer. You should return
+         the jaguar\'s jewel into the \"Jaguar\'s Eye\" mount. It is your last mission.
+    </string>
 
 </resources>

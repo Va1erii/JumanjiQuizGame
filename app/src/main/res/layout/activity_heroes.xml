@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/hero_background"
+    android:background="@drawable/bg_main_activity"
+    tools:context="com.valeriipopov.jumanjiquiz.HeroesActivity">
+
+    <TextView
+        android:id="@+id/stage"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        style="@style/TitleText"
+        tools:text="@string/stage_2"/>
+
+    <TextView
+        android:id="@+id/hero_name"
+        style="@style/HeroesName"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/stage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@string/bravestone"/>
+
+    <LinearLayout
+        android:id="@+id/hero_characteristic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_below="@id/hero_name"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/strengths"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:textAlignment="viewStart"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            tools:text="@string/bravestone_strengths"
+            style="@style/HeroesCharacteristic"/>
+
+        <TextView
+            android:id="@+id/weakness"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textAlignment="viewEnd"
+            android:layout_marginStart="5dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/bravestone_weakness"
+            style="@style/HeroesCharacteristic"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_below="@id/hero_characteristic">
+
+        <TextView
+            android:id="@+id/hero_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/bravestone_history"
+            style="@style/HeroesCharacteristic"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

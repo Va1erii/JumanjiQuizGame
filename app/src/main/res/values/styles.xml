@@ -20,6 +20,18 @@
         <item name="android:textSize">40sp</item>
     </style>
 
+    <style name="HeroesName">
+        <item name="android:fontFamily">@font/jumaji_font</item>
+        <item name="android:textColor">@color/colorTextSubTitle</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="HeroesCharacteristic">
+        <item name="android:fontFamily">@font/jumaji_font</item>
+        <item name="android:textColor">@color/colorTextSubTitle</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
     <style name="TextJumanji">
         <item name="android:fontFamily">@font/koookaburra</item>
         <item name="android:textColor">@color/colorTextJumanji</item>
