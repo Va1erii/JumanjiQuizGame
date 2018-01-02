@@ -64,4 +64,63 @@
          the jaguar\'s jewel into the \"Jaguar\'s Eye\" mount. It is your last mission.
     </string>
 
+    <!-- QuestionActivity -->
+    <string name="btn_next">next</string>
+
+    <!-- QuestionStage1-->
+    <string-array name="question_stage_1">
+        <item>question 1 stage 1</item>
+        <item>question 2 stage 1</item>
+        <item>question 3 stage 1</item>
+        <item>question 4 stage 1</item>
+        <item>question 5 stage 1</item>
+        <item>question 6 stage 1</item>
+        <item>question 7 stage 1</item>
+        <item>question 8 stage 1</item>
+        <item>question 9 stage 1</item>
+        <item>question 10 stage 1</item>
+    </string-array>
+
+    <!-- QuestionStage2-->
+    <string-array name="question_stage_2">
+        <item>question 1 stage 2</item>
+        <item>question 2 stage 2</item>
+        <item>question 3 stage 2</item>
+        <item>question 4 stage 2</item>
+        <item>question 5 stage 2</item>
+        <item>question 6 stage 2</item>
+        <item>question 7 stage 2</item>
+        <item>question 8 stage 2</item>
+        <item>question 9 stage 2</item>
+        <item>question 10 stage 2</item>
+    </string-array>
+
+    <!-- QuestionStage3-->
+    <string-array name="question_stage_3">
+        <item>question 1 stage 3</item>
+        <item>question 2 stage 3</item>
+        <item>question 3 stage 3</item>
+        <item>question 4 stage 3</item>
+        <item>question 5 stage 3</item>
+        <item>question 6 stage 3</item>
+        <item>question 7 stage 3</item>
+        <item>question 8 stage 3</item>
+        <item>question 9 stage 3</item>
+        <item>question 10 stage 3</item>
+    </string-array>
+
+    <!-- QuestionStage4-->
+    <string-array name="question_stage_4">
+        <item>question 1 stage 4</item>
+        <item>question 2 stage 4</item>
+        <item>question 3 stage 4</item>
+        <item>question 4 stage 4</item>
+        <item>question 5 stage 4</item>
+        <item>question 6 stage 4</item>
+        <item>question 7 stage 4</item>
+        <item>question 8 stage 4</item>
+        <item>question 9 stage 4</item>
+        <item>question 10 stage 4</item>
+    </string-array>
+
 </resources>

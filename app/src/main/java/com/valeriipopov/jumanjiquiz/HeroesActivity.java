@@ -38,7 +38,7 @@ public class HeroesActivity extends AppCompatActivity {
         mHeroHistory = findViewById(R.id.hero_history);
 
         mStage = findViewById(R.id.stage);
-        String stage = getIntent().getStringExtra(MainActivity.STAGE);
+        final String stage = getIntent().getStringExtra(MainActivity.STAGE);
         switch (stage){
             case STAGE_1:
                 mHeroBackground.setBackground(mResources.getDrawable(R.drawable.bg_shelly));
@@ -78,7 +78,9 @@ public class HeroesActivity extends AppCompatActivity {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(HeroesActivity.this, QuestionActivity.class));
+                Intent intent = new Intent(HeroesActivity.this, QuestionActivity.class);
+                intent.putExtra(MainActivity.STAGE, stage);
+                startActivity(intent);
             }
         }, 10000);
     }

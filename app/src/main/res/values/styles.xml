@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorTextQuestion</item>
     </style>
 
     <style name="TitleText">
@@ -40,10 +40,11 @@
     </style>
 
     <style name="TextJumanjiQuiz">
-        <item name="android:fontFamily">@font/koookaburra</item>
-        <item name="android:textColor">@color/colorTextQuestion</item>
+        <item name="android:textColor">@color/colorTextAnswer</item>
         <item name="android:textAlignment">viewStart</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">casual</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="TextJumanji">
