@@ -9,5 +9,5 @@
     <color name="colorTextJumanji">#d8da761d</color>
     <color name="colorTextJumanjiStartButton">#f6da761d</color>
     <color name="colorSelectTextJumanji">#d8dac71d</color>
-
+    <color name="colorTextQuestion">#ef31302f</color>
 </resources>
