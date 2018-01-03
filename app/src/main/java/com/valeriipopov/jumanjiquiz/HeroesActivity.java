@@ -23,6 +23,7 @@ public class HeroesActivity extends AppCompatActivity {
     private TextView mHeroHistory;
     private Handler mHandler;
     private Resources mResources;
+    private int mScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class HeroesActivity extends AppCompatActivity {
         mHandler = new Handler(getMainLooper());
         mResources = getResources();
         mHeroBackground = findViewById(R.id.hero_background);
+        mScore = getIntent().getIntExtra(QuestionActivity.SCORE, 0);
 
         mHeroName = findViewById(R.id.hero_name);
         mHeroStrength = findViewById(R.id.strengths);
@@ -80,8 +82,14 @@ public class HeroesActivity extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(HeroesActivity.this, QuestionActivity.class);
                 intent.putExtra(MainActivity.STAGE, stage);
+                intent.putExtra(QuestionActivity.SCORE, mScore);
                 startActivity(intent);
             }
         }, 10000);
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

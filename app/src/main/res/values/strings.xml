@@ -30,6 +30,7 @@
     <string name="stage_2">Stage 2</string>
     <string name="stage_3">Stage 3</string>
     <string name="stage_4">Stage 4</string>
+    <string name="quit_game">Are you sure that you want to exit game?</string>
 
     <!-- HeroesActivity Shelly-->
     <string name="shelly">Professor Sheldon \"Shelly\" Oberon</string>
@@ -70,6 +71,9 @@
     <string name="btn_answer_2">B</string>
     <string name="btn_answer_3">C</string>
     <string name="btn_answer_4">D</string>
+    <string name="quit">Are you sure that you want to quit the current stage?</string>
+    <string name="positive_button">OK</string>
+    <string name="negative_button">CANCEL</string>
 
     <!-- QuestionStage1-->
     <string-array name="question_stage_1">

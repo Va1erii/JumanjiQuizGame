@@ -1,9 +1,12 @@
 package com.valeriipopov.jumanjiquiz;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -50,7 +53,8 @@ public class QuestionActivity extends AppCompatActivity {
     private Resources mResources;
     private int mCount;
     private int mHealth = 3;
-    private int mScore = 0;
+    private int mInitialScore;
+    private int mScore;
     private String[] mQuestions;
     private String mAnswer;
     private String mStage;
@@ -66,7 +70,6 @@ public class QuestionActivity extends AppCompatActivity {
         mImageHP2 = findViewById(R.id.hp_2);
         mImageHP3 = findViewById(R.id.hp_3);
         mQuestionScore = findViewById(R.id.question_score);
-        mQuestionScore.setText(String.valueOf(mScore));
 
         setRadioCheckBoxGroup();
         mButtonNext = findViewById(R.id.btn_next);
@@ -74,7 +77,10 @@ public class QuestionActivity extends AppCompatActivity {
 
         mQuestion = findViewById(R.id.question);
         mCount = 0;
+        mInitialScore = getIntent().getIntExtra(SCORE, 0);
+        mScore = mInitialScore;
         mStage = getIntent().getStringExtra(MainActivity.STAGE);
+        mQuestionScore.setText(String.valueOf(mScore));
         mQuestionCount.setText("Question " + (mCount+1) + "/10");
         setQuestions(mStage);
         setButtonNextListenner();
@@ -493,7 +499,7 @@ public class QuestionActivity extends AppCompatActivity {
                 mImageHP2.setImageDrawable(mResources.getDrawable(R.drawable.ic_dead));
                 mImageHP3.setImageDrawable(mResources.getDrawable(R.drawable.ic_dead));
                 Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
-                intent.putExtra(SCORE, mScore);
+                intent.putExtra(SCORE, mInitialScore);
                 intent.putExtra(CONDITION, GAME_LOSE);
                 startActivity(intent);
                 break;
@@ -507,5 +513,28 @@ public class QuestionActivity extends AppCompatActivity {
             case 3:
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog mAlertDialog = new AlertDialog.Builder(this, R.style.MyAlertDialogTheme)
+                .setCancelable(false)
+                .setTitle(getResources().getText(R.string.app_title))
+                .setMessage(getResources().getText(R.string.quit))
+                .setPositiveButton(getResources().getText(R.string.positive_button), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(QuestionActivity.this, MainActivity.class);
+                        intent.putExtra(SCORE, mInitialScore);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton(getResources().getText(R.string.negative_button), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .show();
     }
 }
