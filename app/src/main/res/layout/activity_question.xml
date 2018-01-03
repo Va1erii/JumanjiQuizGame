@@ -115,6 +115,7 @@
 
             <RadioButton
                 android:id="@+id/radio1"
+                android:hint="@string/btn_answer_1"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -127,6 +128,7 @@
             <RadioButton
                 android:id="@+id/radio2"
                 style="@style/TextJumanjiQuiz"
+                android:hint="@string/btn_answer_2"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
@@ -137,6 +139,7 @@
 
             <RadioButton
                 android:id="@+id/radio3"
+                android:hint="@string/btn_answer_3"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -148,6 +151,7 @@
 
             <RadioButton
                 android:id="@+id/radio4"
+                android:hint="@string/btn_answer_4"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -160,7 +164,7 @@
         <LinearLayout
             android:id="@+id/checkboxGroup"
             android:layout_marginTop="20dp"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -168,6 +172,7 @@
 
             <CheckBox
                 android:id="@+id/checkbox1"
+                android:hint="@string/btn_answer_1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -178,6 +183,7 @@
 
             <CheckBox
                 android:id="@+id/checkbox2"
+                android:hint="@string/btn_answer_2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -188,6 +194,7 @@
 
             <CheckBox
                 android:id="@+id/checkbox3"
+                android:hint="@string/btn_answer_3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -198,6 +205,7 @@
 
             <CheckBox
                 android:id="@+id/checkbox4"
+                android:hint="@string/btn_answer_4"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"

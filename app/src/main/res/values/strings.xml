@@ -39,7 +39,7 @@
         And you should find a key that opens a door to your home.
     </string>
 
-    <!-- HeroesActivity Shelly-->
+    <!-- HeroesActivity Ruby-->
     <string name="ruby">Ruby Roundhouse</string>
     <string name="ruby_strengths">strengths:\n\nkarate\nt\'ai chi\naikido\ndance fighting</string>
     <string name="ruby_weakness">weakness:\n\nvenom</string>
@@ -66,19 +66,103 @@
 
     <!-- QuestionActivity -->
     <string name="btn_next">next</string>
+    <string name="btn_answer_1">A</string>
+    <string name="btn_answer_2">B</string>
+    <string name="btn_answer_3">C</string>
+    <string name="btn_answer_4">D</string>
 
     <!-- QuestionStage1-->
     <string-array name="question_stage_1">
-        <item>question 1 stage 1</item>
-        <item>question 2 stage 1</item>
-        <item>question 3 stage 1</item>
-        <item>question 4 stage 1</item>
-        <item>question 5 stage 1</item>
-        <item>question 6 stage 1</item>
-        <item>question 7 stage 1</item>
-        <item>question 8 stage 1</item>
-        <item>question 9 stage 1</item>
-        <item>question 10 stage 1</item>
+        <item>What is the capital city of the U.S. state of Hawaii?</item>
+        <item>What is the tallest mountain in Africa?</item>
+        <item>What kind of tree do acorns grow on?</item>
+        <item>The Dingo is a free range dog found mainly in which country?</item>
+        <item>In what mountain range is Mount Everest located?</item>
+        <item>Choose what is not a lake</item>
+        <item>What is a dinosaur?</item>
+        <item>What is not exist?</item>
+        <item>What island does the Statue of Liberty stand on?</item>
+        <item>What is earth\'s largest ocean by surface size?</item>
+    </string-array>
+
+    <string-array name="answer_stage1_question_1">
+        <item>Honolulu</item>
+        <item>Kailua</item>
+        <item>Kapolei</item>
+        <item>Kaneohe</item>
+        <item>A</item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage1_question_2">
+        <item>Mount Stanley</item>
+        <item>Mount Meru</item>
+        <item>Mount Kilimanjaro</item>
+        <item>Mount Kenya</item>
+        <item>C</item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage1_question_3">
+        <item>Pine</item>
+        <item>Oak</item>
+        <item>Aspen</item>
+        <item>Birch</item>
+        <item>B</item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage1_question_4">
+        <item>Brazil</item>
+        <item>Austria</item>
+        <item>Africa</item>
+        <item>Australia</item>
+        <item>D</item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage1_question_5">
+        <item>Alps</item>
+        <item>Himalayas</item>
+        <item>Andes</item>
+        <item>Rocky Mountains</item>
+        <item>B</item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage1_question_6">
+        <item>Nile</item>
+        <item>Baikal</item>
+        <item>Ganges</item>
+        <item>Neagh</item>
+        <item>AC</item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage1_question_7">
+        <item>Godzilla</item>
+        <item>T-Rex</item>
+        <item>King Kong</item>
+        <item>Raptor</item>
+        <item>BD</item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage1_question_8">
+        <item>Mordor</item>
+        <item>Honduras</item>
+        <item>Aruba</item>
+        <item>Alagezia</item>
+        <item>AD</item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage1_question_9">
+        <item>Justice Island</item>
+        <item>Liberty Island</item>
+        <item>Honesty Island</item>
+        <item>Truth Island</item>
+        <item>B</item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage1_question_10">
+        <item>Atlantic</item>
+        <item>Indian</item>
+        <item>Pacific</item>
+        <item>Arctic</item>
+        <item>C</item> <!-- Answer-->
     </string-array>
 
     <!-- QuestionStage2-->
@@ -95,6 +179,86 @@
         <item>question 10 stage 2</item>
     </string-array>
 
+    <string-array name="answer_stage2_question_1">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage2_question_2">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage2_question_3">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage2_question_4">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage2_question_5">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage2_question_6">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage2_question_7">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage2_question_8">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage2_question_9">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage2_question_10">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
     <!-- QuestionStage3-->
     <string-array name="question_stage_3">
         <item>question 1 stage 3</item>
@@ -109,6 +273,86 @@
         <item>question 10 stage 3</item>
     </string-array>
 
+    <string-array name="answer_stage3_question_1">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage3_question_2">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage3_question_3">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage3_question_4">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage3_question_5">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage3_question_6">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage3_question_7">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage3_question_8">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage3_question_9">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage3_question_10">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
     <!-- QuestionStage4-->
     <string-array name="question_stage_4">
         <item>question 1 stage 4</item>
@@ -121,6 +365,86 @@
         <item>question 8 stage 4</item>
         <item>question 9 stage 4</item>
         <item>question 10 stage 4</item>
+    </string-array>
+
+    <string-array name="answer_stage4_question_1">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage4_question_2">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage4_question_3">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage4_question_4">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage4_question_5">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage4_question_6">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage4_question_7">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage4_question_8">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage4_question_9">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
+    </string-array>
+
+    <string-array name="answer_stage4_question_10">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item> <!-- Answer-->
     </string-array>
 
 </resources>
