@@ -1,5 +1,6 @@
 package com.valeriipopov.jumanjiquiz;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Handler;
@@ -21,6 +22,10 @@ import java.util.Collections;
 import java.util.HashMap;
 
 public class QuestionActivity extends AppCompatActivity {
+    public static final String SCORE = "score";
+    public static final String CONDITION = "condition";
+    public static final String GAME_WIN = "win";
+    public static final String GAME_LOSE = "lose";
 
     private TextView mQuestionScore;
     private TextView mQuestion;
@@ -203,7 +208,53 @@ public class QuestionActivity extends AppCompatActivity {
                             }
                         }, 500);
                     }
-
+                }
+                else {
+                    for (final RadioButton radioButton: mRadioButtons){
+                        if (radioButton.isChecked()){
+                            String choice = radioButton.getHint().toString();
+                            if (choice.equals(mAnswer)){
+                                mScore += 10;
+                                radioButton.setBackground(mResources.getDrawable(R.drawable.bg_quiz_correct));
+                                mHandler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        radioButton.setBackground(mResources.getDrawable(R.drawable.bg_quiz));
+                                        mQuestionScore.setText(String.valueOf(mScore));
+                                    }
+                                }, 100);
+                                mHandler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
+                                        intent.putExtra(SCORE, mScore);
+                                        intent.putExtra(CONDITION, GAME_WIN);
+                                        startActivity(intent);
+                                    }
+                                }, 500);
+                            }
+                            else {
+                                mHealth--;
+                                radioButton.setBackground(mResources.getDrawable(R.drawable.bg_quiz_wrong));
+                                mHandler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        radioButton.setBackground(mResources.getDrawable(R.drawable.bg_quiz));
+                                        checkHealth(mHealth);
+                                    }
+                                }, 100);
+                            }
+                            mHandler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
+                                    intent.putExtra(SCORE, mScore);
+                                    intent.putExtra(CONDITION, GAME_WIN);
+                                    startActivity(intent);
+                                }
+                            }, 500);
+                        }
+                    }
                 }
             }
         });
@@ -441,6 +492,10 @@ public class QuestionActivity extends AppCompatActivity {
                 mImageHP1.setImageDrawable(mResources.getDrawable(R.drawable.ic_dead));
                 mImageHP2.setImageDrawable(mResources.getDrawable(R.drawable.ic_dead));
                 mImageHP3.setImageDrawable(mResources.getDrawable(R.drawable.ic_dead));
+                Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
+                intent.putExtra(SCORE, mScore);
+                intent.putExtra(CONDITION, GAME_LOSE);
+                startActivity(intent);
                 break;
             case 1:
                 mImageHP2.setImageDrawable(mResources.getDrawable(R.drawable.ic_dead));

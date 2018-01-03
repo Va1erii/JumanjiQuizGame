@@ -447,4 +447,9 @@
         <item></item> <!-- Answer-->
     </string-array>
 
+    <!-- ActivityEndGame-->
+
+    <string name="win_game">You win</string>
+    <string name="lose_game">Game Over</string>
+
 </resources>

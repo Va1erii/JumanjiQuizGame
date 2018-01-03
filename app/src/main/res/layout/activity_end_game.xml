@@ -1,10 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/end_game"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_win"
+    android:gravity="center"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
     tools:context="com.valeriipopov.jumanjiquiz.EndGameActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/game_condition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/win_game"
+        style="@style/TextJumanjiQuote"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="60sp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_below="@id/game_condition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/score"
+            style="@style/TextJumanjiQuote"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="60sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/stage_score"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            tools:text="100"
+            style="@style/TextJumanjiQuote"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="60sp"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
