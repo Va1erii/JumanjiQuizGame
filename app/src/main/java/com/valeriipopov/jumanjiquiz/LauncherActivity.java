@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * LauncherActivity show us animating text. I used Handler for it
+ */
+
 public class LauncherActivity extends AppCompatActivity {
 
     private Button mStartButton;
@@ -65,8 +69,12 @@ public class LauncherActivity extends AppCompatActivity {
         startActivity(a);
         mHandler.removeCallbacks(mTask);
         LauncherActivity.this.finish();
+        // To remove our previous task and quit from game
     }
 
+    /**
+     * This class is implementing Runnable class, it opens MainActivity
+     */
     class LauncherActivityTask implements Runnable{
         @Override
         public void run() {

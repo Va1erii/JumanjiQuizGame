@@ -10,6 +10,11 @@ import android.os.Bundle;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+/**
+ * EndGameActivity show us our condition after end game. And then return to MainActivity
+ * We check an orientation, if the orientation equals landscape, we'll use the landscape drawable
+ */
+
 public class EndGameActivity extends AppCompatActivity {
 
     private TextView mConditionTextView;
@@ -32,21 +37,28 @@ public class EndGameActivity extends AppCompatActivity {
         int orientation = mResources.getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE){
             mIsLandscape = true;
+            //To check orientation
         }
         mLayout = findViewById(R.id.end_game);
         mHandler = new Handler(getMainLooper());
         mTask = new EndGameActivityTask();
+        // mTask runs MainActivity with a current score
+
         if (savedInstanceState != null) {
             mCondition = savedInstanceState.getString(QuestionActivity.CONDITION);
             mScore = savedInstanceState.getInt(QuestionActivity.SCORE);
             mStage = savedInstanceState.getString(MainActivity.STAGE);
+            // If we change orientation
         } else {
             mCondition = getIntent().getStringExtra(QuestionActivity.CONDITION);
             mScore = getIntent().getIntExtra(QuestionActivity.SCORE, 0);
             mStage = getIntent().getStringExtra(MainActivity.STAGE);
         }
-
         mConditionTextView = findViewById(R.id.game_condition);
+
+        /**
+         * Check our condition. If we won, we show win's text. If we lost, our score = 0
+         */
         if (mCondition.equals(QuestionActivity.GAME_WIN)){
             if (mStage.equals(HeroesActivity.STAGE_4)){
                 if (mIsLandscape){
@@ -59,6 +71,8 @@ public class EndGameActivity extends AppCompatActivity {
                 mConditionTextView.setText(mResources.getText(R.string.win_game));
                 mConditionTextView.setTextSize(30);
                 mHandler.postDelayed(mTask, 6000);
+                // If we won stage 4, we show text win game. Also we check orientation mode
+                // Handler.postDelayed is method when we use to run after some time (millis)
             }
             else {
                 if (mIsLandscape){
@@ -93,6 +107,9 @@ public class EndGameActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * @param outState is our savedInstanceState. We save our scor, stage and condition
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putString(QuestionActivity.CONDITION, mCondition);
@@ -102,6 +119,9 @@ public class EndGameActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
+    /**
+     * This class is implementing Runnable class, it opens MainActivity with our current score
+     */
     class EndGameActivityTask implements Runnable{
         @Override
         public void run() {

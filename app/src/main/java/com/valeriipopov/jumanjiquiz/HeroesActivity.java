@@ -9,6 +9,10 @@ import android.os.Bundle;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+/**
+ * This class show us a game stage and hero of stage
+ */
+
 public class HeroesActivity extends AppCompatActivity {
 
     public static final String STAGE_1 = "Stage 1";
@@ -44,15 +48,20 @@ public class HeroesActivity extends AppCompatActivity {
         int orientation = getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE){
             mIsLandScape = true;
+            //To check orientation
         }
         mStageTextView = findViewById(R.id.stage);
         if (savedInstanceState != null){
             mScore = savedInstanceState.getInt(QuestionActivity.SCORE);
             mStage = savedInstanceState.getString(MainActivity.STAGE);
+            // If we change orientation
         } else {
             mScore = getIntent().getIntExtra(QuestionActivity.SCORE, 0);
             mStage = getIntent().getStringExtra(MainActivity.STAGE);
         }
+        /**
+         * mStage is our current stage. We check our stage and fill activity
+         */
         switch (mStage){
             case STAGE_1:
                 if (mIsLandScape){
@@ -108,11 +117,8 @@ public class HeroesActivity extends AppCompatActivity {
                 break;
         }
         mStageTextView.setText(mStage);
-        if (savedInstanceState != null){
-            mHandler.postDelayed(mActivityTask, 5000);
-        } else {
-            mHandler.postDelayed(mActivityTask, 8000);
-        }
+        mHandler.postDelayed(mActivityTask, 5000);
+        // Handler.postDelayed is method when we use to run after some time (millis)
     }
 
     @Override
@@ -120,6 +126,7 @@ public class HeroesActivity extends AppCompatActivity {
         outState.putInt(QuestionActivity.SCORE, mScore);
         outState.putString(MainActivity.STAGE, mStage);
         mHandler.removeCallbacks(mActivityTask);
+        // we remove previous task from Handler
         super.onSaveInstanceState(outState);
     }
 
@@ -128,6 +135,10 @@ public class HeroesActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This class is implementing Runnable class, it opens QuestionActivity with our current score
+     * and stage
+     */
     class HeroesActivityTask implements Runnable {
         @Override
         public void run() {

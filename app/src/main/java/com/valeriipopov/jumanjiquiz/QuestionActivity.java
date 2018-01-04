@@ -1,11 +1,9 @@
 package com.valeriipopov.jumanjiquiz;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -18,13 +16,14 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+/**
+ * QuestionActivity is our important activity where we show questions.
+ * Health = 3, if health = 0 Game Over.
+ * InitialScore is our score before we start the current level, if we
+ * quit from stage before we win or lose, we return InitialScore
+ */
 
 public class QuestionActivity extends AppCompatActivity {
     public static final String SCORE = "score";
@@ -74,6 +73,7 @@ public class QuestionActivity extends AppCompatActivity {
         int orientation = mResources.getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE){
             mIsLandscape = true;
+            // to check orientation
         }
         mImageHP1 = findViewById(R.id.hp_1);
         mImageHP2 = findViewById(R.id.hp_2);
@@ -92,6 +92,7 @@ public class QuestionActivity extends AppCompatActivity {
             mInitialScore = savedInstanceState.getInt(INITIAL_SCORE);
             mScore = savedInstanceState.getInt(SCORE);
             mStage = savedInstanceState.getString(MainActivity.STAGE);
+            // if we change orientation
         } else {
             mCount = 0;
             mHealth = 3;
@@ -106,6 +107,9 @@ public class QuestionActivity extends AppCompatActivity {
         checkHealth(mHealth);
     }
 
+    /**
+     * This method find our RadioButtons and CheckBoxes. We put our buttons into arrays
+     */
     private void setRadioCheckBoxGroup(){
         mRadioGroup = findViewById(R.id.radioGroup);
         mRadioButton1 = findViewById(R.id.radio1);
@@ -120,6 +124,7 @@ public class QuestionActivity extends AppCompatActivity {
         if (mIsLandscape){
             mCheckBoxGroup = (RelativeLayout) findViewById(R.id.checkboxGroup);
             setRadioClickListener();
+            // In landscape I used RelativeLayout
         } else {
             mCheckBoxGroup = (LinearLayout) findViewById(R.id.checkboxGroup);
         }
@@ -134,6 +139,11 @@ public class QuestionActivity extends AppCompatActivity {
         mCheckBoxes[3] = mCheckBox4;
     }
 
+    /**
+     * This method setClickListener in mButtonNext. We check the current question, because
+     * question 6 until question 8 used checkBoxes. If our answer is wrong we decrease health.
+     * If answer is correct we increase score. Handler runs EndGameActivity with current score, stage and condition.
+     */
     private void setButtonNextListenner(){
         mButtonNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,6 +156,7 @@ public class QuestionActivity extends AppCompatActivity {
                     }
                 }, 100);
                 if (mCount < 5 || mCount > 7 && mCount < 9) {
+                    // RadioButtons
                     for (final RadioButton radioButton: mRadioButtons){
                         if (radioButton.isChecked()){
                             String choice = radioButton.getHint().toString();
@@ -184,6 +195,7 @@ public class QuestionActivity extends AppCompatActivity {
                     }
                 }
                 else if (mCount > 4 && mCount < 8){
+                    // CheckBoxes
                     StringBuilder choice = new StringBuilder();
                     for (CheckBox checkBox: mCheckBoxes){
                         if (checkBox.isChecked()){
@@ -240,6 +252,7 @@ public class QuestionActivity extends AppCompatActivity {
                     }
                 }
                 else {
+                    // RadioButtons
                     for (final RadioButton radioButton: mRadioButtons){
                         if (radioButton.isChecked()){
                             String choice = radioButton.getHint().toString();
@@ -292,6 +305,10 @@ public class QuestionActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * @param stage is our current level.
+     * We fill Question's array for current stage. And we fill our answer's buttons
+     */
     private void setQuestions (String stage){
         switch (stage){
             case HeroesActivity.STAGE_1:
@@ -317,6 +334,10 @@ public class QuestionActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * @param numQuestion is current numder of question, we fill our answer's buttons
+     * @param stage is current stage.
+     */
     private void setAnswerChoice(int numQuestion, String stage){
         String [] answers;
         if (stage.equals(HeroesActivity.STAGE_1)){
@@ -497,6 +518,10 @@ public class QuestionActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * @param numQuestion is current number of question, we used checkboxes for questions number 6, 7 and 8.
+     * @param answers is array where we saved answer's choice. Our answer is in answer[4]
+     */
     private void setRadioOrCheckBox (int numQuestion, String[] answers){
         if (numQuestion < 5 || numQuestion > 7) {
             mCheckBoxGroup.setVisibility(View.INVISIBLE);
@@ -518,6 +543,10 @@ public class QuestionActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method we use only in Landscape orientation. Because I didn't use RadioGroup in landscape mode
+     * It cause we can choose multiple answers, but it incorrect
+     */
     private void setRadioClickListener(){
         for (final RadioButton radio: mRadioButtons){
             radio.setOnClickListener(new View.OnClickListener() {
@@ -532,6 +561,9 @@ public class QuestionActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * @param health is current health, if health = 0 our score will be zero in the EndGameActivity
+     */
     private void checkHealth (int health){
         switch (health){
             case 0:
@@ -555,6 +587,9 @@ public class QuestionActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * If we press back button we show AlertDialog
+     */
     @Override
     public void onBackPressed() {
         AlertDialog mAlertDialog = new AlertDialog.Builder(this, R.style.MyAlertDialogTheme)
@@ -587,5 +622,6 @@ public class QuestionActivity extends AppCompatActivity {
         outState.putInt(SCORE, mScore);
         outState.putString(MainActivity.STAGE, mStage);
         super.onSaveInstanceState(outState);
+        // Save our current count, score and stage when we change orientation
     }
 }
