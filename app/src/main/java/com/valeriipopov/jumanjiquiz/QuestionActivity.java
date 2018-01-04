@@ -3,6 +3,7 @@ package com.valeriipopov.jumanjiquiz;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Handler;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +31,9 @@ public class QuestionActivity extends AppCompatActivity {
     public static final String CONDITION = "condition";
     public static final String GAME_WIN = "win";
     public static final String GAME_LOSE = "lose";
+    public static final String COUNT = "count";
+    public static final String HEALTH = "health";
+    public static final String INITIAL_SCORE = "initialScore";
 
     private TextView mQuestionScore;
     private TextView mQuestion;
@@ -40,7 +45,7 @@ public class QuestionActivity extends AppCompatActivity {
     private RadioButton mRadioButton3;
     private RadioButton mRadioButton4;
     private RadioButton[] mRadioButtons;
-    private LinearLayout mCheckBoxGroup;
+    private View mCheckBoxGroup;
     private CheckBox mCheckBox1;
     private CheckBox mCheckBox2;
     private CheckBox mCheckBox3;
@@ -52,12 +57,13 @@ public class QuestionActivity extends AppCompatActivity {
     private Button mButtonNext;
     private Resources mResources;
     private int mCount;
-    private int mHealth = 3;
+    private int mHealth;
     private int mInitialScore;
     private int mScore;
     private String[] mQuestions;
     private String mAnswer;
     private String mStage;
+    private boolean mIsLandscape;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +71,10 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_question);
         mHandler = new Handler(getMainLooper());
         mResources = getResources();
-
+        int orientation = mResources.getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE){
+            mIsLandscape = true;
+        }
         mImageHP1 = findViewById(R.id.hp_1);
         mImageHP2 = findViewById(R.id.hp_2);
         mImageHP3 = findViewById(R.id.hp_3);
@@ -76,10 +85,20 @@ public class QuestionActivity extends AppCompatActivity {
         mQuestionCount = findViewById(R.id.countQuestion);
 
         mQuestion = findViewById(R.id.question);
-        mCount = 0;
-        mInitialScore = getIntent().getIntExtra(SCORE, 0);
-        mScore = mInitialScore;
-        mStage = getIntent().getStringExtra(MainActivity.STAGE);
+
+        if (savedInstanceState != null) {
+            mCount = savedInstanceState.getInt(COUNT);
+            mHealth = savedInstanceState.getInt(HEALTH);
+            mInitialScore = savedInstanceState.getInt(INITIAL_SCORE);
+            mScore = savedInstanceState.getInt(SCORE);
+            mStage = savedInstanceState.getString(MainActivity.STAGE);
+        } else {
+            mCount = 0;
+            mHealth = 3;
+            mInitialScore = getIntent().getIntExtra(SCORE, 0);
+            mScore = mInitialScore;
+            mStage = getIntent().getStringExtra(MainActivity.STAGE);
+        }
         mQuestionScore.setText(String.valueOf(mScore));
         mQuestionCount.setText("Question " + (mCount+1) + "/10");
         setQuestions(mStage);
@@ -98,7 +117,12 @@ public class QuestionActivity extends AppCompatActivity {
         mRadioButtons[1] = mRadioButton2;
         mRadioButtons[2] = mRadioButton3;
         mRadioButtons[3] = mRadioButton4;
-        mCheckBoxGroup = findViewById(R.id.checkboxGroup);
+        if (mIsLandscape){
+            mCheckBoxGroup = (RelativeLayout) findViewById(R.id.checkboxGroup);
+            setRadioClickListener();
+        } else {
+            mCheckBoxGroup = (LinearLayout) findViewById(R.id.checkboxGroup);
+        }
         mCheckBox1 = findViewById(R.id.checkbox1);
         mCheckBox2 = findViewById(R.id.checkbox2);
         mCheckBox3 = findViewById(R.id.checkbox3);
@@ -235,6 +259,7 @@ public class QuestionActivity extends AppCompatActivity {
                                         Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
                                         intent.putExtra(SCORE, mScore);
                                         intent.putExtra(CONDITION, GAME_WIN);
+                                        intent.putExtra(MainActivity.STAGE, mStage);
                                         startActivity(intent);
                                     }
                                 }, 500);
@@ -256,6 +281,7 @@ public class QuestionActivity extends AppCompatActivity {
                                     Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
                                     intent.putExtra(SCORE, mScore);
                                     intent.putExtra(CONDITION, GAME_WIN);
+                                    intent.putExtra(MainActivity.STAGE, mStage);
                                     startActivity(intent);
                                 }
                             }, 500);
@@ -492,6 +518,20 @@ public class QuestionActivity extends AppCompatActivity {
         }
     }
 
+    private void setRadioClickListener(){
+        for (final RadioButton radio: mRadioButtons){
+            radio.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    for (RadioButton radio: mRadioButtons){
+                        radio.setChecked(false);
+                    }
+                    radio.setChecked(true);
+                }
+            });
+        }
+    }
+
     private void checkHealth (int health){
         switch (health){
             case 0:
@@ -527,6 +567,7 @@ public class QuestionActivity extends AppCompatActivity {
                         Intent intent = new Intent(QuestionActivity.this, MainActivity.class);
                         intent.putExtra(SCORE, mInitialScore);
                         startActivity(intent);
+                        QuestionActivity.this.finish();
                     }
                 })
                 .setNegativeButton(getResources().getText(R.string.negative_button), new DialogInterface.OnClickListener() {
@@ -536,5 +577,15 @@ public class QuestionActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(COUNT, mCount);
+        outState.putInt(HEALTH, mHealth);
+        outState.putInt(INITIAL_SCORE, mInitialScore);
+        outState.putInt(SCORE, mScore);
+        outState.putString(MainActivity.STAGE, mStage);
+        super.onSaveInstanceState(outState);
     }
 }

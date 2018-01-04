@@ -11,4 +11,5 @@
     <color name="colorSelectTextJumanji">#d8dac71d</color>
     <color name="colorTextQuestion">#ef31302f</color>
     <color name="colorTextAnswer">#232222</color>
+    <color name="colorBackgrondQuestion">#e2ebbc7a</color>
 </resources>

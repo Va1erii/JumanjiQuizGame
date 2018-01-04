@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main_activity_land"
+    tools:context="com.valeriipopov.jumanjiquiz.MainActivity">
+
+    <TextView
+        android:id="@+id/app_title"
+        style="@style/TitleText"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_title"/>
+
+    <LinearLayout
+        android:id="@+id/score"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_title"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="wrap_content"
+            android:text="@string/score"
+            android:textAlignment="center"
+            style="@style/TitleText"/>
+
+        <TextView
+            android:id="@+id/textview_score"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            tools:text="100"
+            style="@style/SubTitleText"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/stages"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/score"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/stage_1"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_stage_1"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_1"
+                android:textAllCaps="true"
+                android:background="@android:color/transparent"
+                style="@style/TextJumanji"
+                android:textColor="@color/colorTextSubTitle"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_lock_open"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stage_2"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_below="@id/stage_1"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_stage_2"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_2"
+                android:textAllCaps="true"
+                android:background="@android:color/transparent"
+                style="@style/TextJumanji"
+                android:textColor="@color/colorTextSubTitle"/>
+
+            <ImageView
+                android:id="@+id/lock_stage_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_lock"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stage_3"
+            android:paddingStart="20dp"
+            android:layout_marginBottom="10dp"
+            android:paddingEnd="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_stage_3"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_3"
+                android:textAllCaps="true"
+                android:background="@android:color/transparent"
+                style="@style/TextJumanji"
+                android:textColor="@color/colorTextSubTitle"/>
+
+            <ImageView
+                android:id="@+id/lock_stage_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_lock"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stage_4"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/stage_3"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="40dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_stage_4"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_4"
+                android:textAllCaps="true"
+                android:background="@android:color/transparent"
+                style="@style/TextJumanji"
+                android:textColor="@color/colorTextSubTitle"/>
+
+            <ImageView
+                android:id="@+id/lock_stage_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_lock"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    
+</RelativeLayout>

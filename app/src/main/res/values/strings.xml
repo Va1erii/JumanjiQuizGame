@@ -73,7 +73,7 @@
     <string name="btn_answer_4">D</string>
     <string name="quit">Are you sure that you want to quit the current stage?</string>
     <string name="positive_button">OK</string>
-    <string name="negative_button">CANCEL</string>
+    <string name="negative_button">Cancel</string>
 
     <!-- QuestionStage1-->
     <string-array name="question_stage_1">
@@ -171,289 +171,294 @@
 
     <!-- QuestionStage2-->
     <string-array name="question_stage_2">
-        <item>question 1 stage 2</item>
-        <item>question 2 stage 2</item>
-        <item>question 3 stage 2</item>
-        <item>question 4 stage 2</item>
-        <item>question 5 stage 2</item>
-        <item>question 6 stage 2</item>
-        <item>question 7 stage 2</item>
-        <item>question 8 stage 2</item>
-        <item>question 9 stage 2</item>
-        <item>question 10 stage 2</item>
+        <item>What is the original style Bruce Lee learned?</item>
+        <item>The samurai code of honor is known as?</item>
+        <item>What is the style Bruce Lee invented?</item>
+        <item>What was the name of Bruce Lee\'s teacher?</item>
+        <item>A Samurai sword set includes three swords. What is the name of the largest one?</item>
+        <item>Choose martial arts</item>
+        <item>Who of these are a martial arts actor?</item>
+        <item>What of these are a martial movie?</item>
+        <item>In Judo its called Dojo. What is the place where practicing Kung fu is called?</item>
+        <item>What martial art is a traditional sword martial art?</item>
     </string-array>
 
+    <string name="asd">A Samurai sword set includes three swords. What is the name of the largest one?</string>
+
     <string-array name="answer_stage2_question_1">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Akido</item>
+        <item>Wing Chun</item>
+        <item>American Kenpo</item>
+        <item>Judo</item>
+        <item>B</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage2_question_2">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Bushido</item>
+        <item>Kokido</item>
+        <item>Chendo</item>
+        <item>Bodido</item>
+        <item>A</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage2_question_3">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Tatsu do</item>
+        <item>Jeet kune do</item>
+        <item>Wing chun</item>
+        <item>Book sol wan</item>
+        <item>B</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage2_question_4">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Yim Wing Chun</item>
+        <item>Takuan</item>
+        <item>Bow Sim Mark</item>
+        <item>Yip Man</item>
+        <item>D</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage2_question_5">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Wakazashi</item>
+        <item>Shirasaya</item>
+        <item>Tanto</item>
+        <item>Katana</item>
+        <item>D</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage2_question_6">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>WWE</item>
+        <item>Aikido</item>
+        <item>Judo</item>
+        <item>Cagefighting</item>
+        <item>BC</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage2_question_7">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Dolph Lundgren</item>
+        <item>Tom Cruise</item>
+        <item>Matt Damon</item>
+        <item>Jackie Chan</item>
+        <item>AD</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage2_question_8">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>The Raid</item>
+        <item>Enter the Dragon</item>
+        <item>The Godfather</item>
+        <item>The Wizard of Oz</item>
+        <item>AB</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage2_question_9">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Gym</item>
+        <item>Kwoon</item>
+        <item>School</item>
+        <item>Ring</item>
+        <item>B</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage2_question_10">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Headong kumdo</item>
+        <item>Aikido</item>
+        <item>Tae kwon do</item>
+        <item>Judo</item>
+        <item>A</item> <!-- Answer-->
     </string-array>
 
     <!-- QuestionStage3-->
     <string-array name="question_stage_3">
-        <item>question 1 stage 3</item>
-        <item>question 2 stage 3</item>
-        <item>question 3 stage 3</item>
-        <item>question 4 stage 3</item>
-        <item>question 5 stage 3</item>
-        <item>question 6 stage 3</item>
-        <item>question 7 stage 3</item>
-        <item>question 8 stage 3</item>
-        <item>question 9 stage 3</item>
-        <item>question 10 stage 3</item>
+        <item>What is the fastest land animal?</item>
+        <item>What is the tallest mammal?</item>
+        <item>What is the smallest monkey in the world?</item>
+        <item>What tiny, colorful bird flaps its wings at over 500 beats per minute?</item>
+        <item>What animal lives on mountainsides and uses its horns for battle?</item>
+        <item>What of these are a dog\'s breed?</item>
+        <item>What of these are not a predator?</item>
+        <item>What of these are not a fish?</item>
+        <item>Which is the preferred habitat of the red squirrel?</item>
+        <item>What is considered to be the largest shark?</item>
     </string-array>
 
     <string-array name="answer_stage3_question_1">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Elephant</item>
+        <item>Lion</item>
+        <item>Beer</item>
+        <item>Cheetah</item>
+        <item>D</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage3_question_2">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Elephant</item>
+        <item>Giraffe</item>
+        <item>Horse</item>
+        <item>Brown bear</item>
+        <item>B</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage3_question_3">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Capuchin monkey</item>
+        <item>Orangutang</item>
+        <item>Pygmy marmoset</item>
+        <item>Lemur</item>
+        <item>C</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage3_question_4">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Hummingbird</item>
+        <item>Macaw</item>
+        <item>Finch</item>
+        <item>Cockatiel</item>
+        <item>A</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage3_question_5">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Antelope</item>
+        <item>Moose</item>
+        <item>Mountain goat</item>
+        <item>Elk</item>
+        <item>C</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage3_question_6">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Bulldog</item>
+        <item>Bengal dog</item>
+        <item>Dobermann</item>
+        <item>Persian dog</item>
+        <item>AC</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage3_question_7">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Wolf</item>
+        <item>Pig</item>
+        <item>Bear</item>
+        <item>Mouse</item>
+        <item>BD</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage3_question_8">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Dolphin</item>
+        <item>Goldfish</item>
+        <item>Carp</item>
+        <item>Whale</item>
+        <item>AD</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage3_question_9">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Forest</item>
+        <item>Marsh</item>
+        <item>Midtown</item>
+        <item>Heather</item>
+        <item>A</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage3_question_10">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Hammerhead</item>
+        <item>Whale Shark</item>
+        <item>Great White</item>
+        <item>Bronze Whaler</item>
+        <item>B</item> <!-- Answer-->
     </string-array>
 
     <!-- QuestionStage4-->
     <string-array name="question_stage_4">
-        <item>question 1 stage 4</item>
-        <item>question 2 stage 4</item>
-        <item>question 3 stage 4</item>
-        <item>question 4 stage 4</item>
-        <item>question 5 stage 4</item>
-        <item>question 6 stage 4</item>
-        <item>question 7 stage 4</item>
-        <item>question 8 stage 4</item>
-        <item>question 9 stage 4</item>
-        <item>question 10 stage 4</item>
+        <item>What of these creatures most resemble the nine Ring Wraiths?</item>
+        <item>Who created the fictional land of Narnia?</item>
+        <item>What author conceived the land of Alagaesia?</item>
+        <item>This half-man, half-bull beast was kept in a labyrinth on Crete</item>
+        <item>Just looking at this snake-haired monster would turn you to stone</item>
+        <item>Who of these are creatures of the Lord of the Rings?</item>
+        <item>Who of these is not exist?</item>
+        <item>What of these are not fantasy movies?</item>
+        <item>They\'re giants with only one eye</item>
+        <item>Who is odysseus?</item>
     </string-array>
 
     <string-array name="answer_stage4_question_1">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Dementors</item>
+        <item>Snape</item>
+        <item>Voldemort</item>
+        <item>House elves</item>
+        <item>A</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage4_question_2">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Stephen King</item>
+        <item>J.R.R. Tolkien</item>
+        <item>A.A.Milne</item>
+        <item>C.S.Lewis</item>
+        <item>D</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage4_question_3">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>J.K. Rowling</item>
+        <item>Christopher Paolini</item>
+        <item>Mark Twain</item>
+        <item>Anne Rice</item>
+        <item>B</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage4_question_4">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Phoenix</item>
+        <item>Cyclops</item>
+        <item>Chimera</item>
+        <item>Minotaur</item>
+        <item>D</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage4_question_5">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Medusa</item>
+        <item>Harpy</item>
+        <item>Chimera</item>
+        <item>Orc</item>
+        <item>A</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage4_question_6">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Gollum</item>
+        <item>Hobbit</item>
+        <item>Gorgon</item>
+        <item>Minotaur</item>
+        <item>AB</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage4_question_7">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Rabbit</item>
+        <item>Dragon</item>
+        <item>Vampire</item>
+        <item>Goldfish</item>
+        <item>BC</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage4_question_8">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Forrest Gump</item>
+        <item>Harry Potter</item>
+        <item>The wizard of Oz</item>
+        <item>The Godfather</item>
+        <item>AD</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage4_question_9">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Harpies</item>
+        <item>Cyclopes</item>
+        <item>Gorgons</item>
+        <item>Elves</item>
+        <item>B</item> <!-- Answer-->
     </string-array>
 
     <string-array name="answer_stage4_question_10">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item> <!-- Answer-->
+        <item>Orc</item>
+        <item>Elf</item>
+        <item>Human</item>
+        <item>Cyclope</item>
+        <item>C</item> <!-- Answer-->
     </string-array>
 
     <!-- ActivityEndGame-->
 
-    <string name="win_game">You win</string>
+    <string name="win_stage">You win</string>
     <string name="lose_game">Game Over</string>
+    <string name="win_game">Jumanji is had defeated! You have saved the group and
+        you can return to your home! But Jumanji is waiting it\'s time that it can come back!</string>
+
 
 </resources>

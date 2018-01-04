@@ -6,7 +6,7 @@
     android:id="@+id/end_game"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_win"
+    android:background="@drawable/bg_lose_land"
     android:gravity="center"
     android:paddingStart="20dp"
     android:paddingEnd="20dp"

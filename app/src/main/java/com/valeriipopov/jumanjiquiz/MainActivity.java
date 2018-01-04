@@ -37,7 +37,11 @@ public class MainActivity extends AppCompatActivity {
         mResources = getResources();
         mHandler = new Handler(getMainLooper());
         mScoreTextView = findViewById(R.id.textview_score);
-        mScore = getIntent().getIntExtra(QuestionActivity.SCORE, 0);
+        if (savedInstanceState != null){
+            mScore = savedInstanceState.getInt(QuestionActivity.SCORE);
+        } else {
+            mScore = getIntent().getIntExtra(QuestionActivity.SCORE, 0);
+        }
         mScoreTextView.setText(String.valueOf(mScore));
         mStage1 = findViewById(R.id.btn_stage_1);
         mStage2 = findViewById(R.id.btn_stage_2);
@@ -75,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
             mStageLock4.setImageDrawable(mResources.getDrawable(R.drawable.ic_lock_open));
         }
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(QuestionActivity.SCORE, mScore);
+        super.onSaveInstanceState(outState);
     }
 
     private void setBtnOnClick(){
@@ -117,10 +127,9 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton(getResources().getText(R.string.positive_button), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent a = new Intent(Intent.ACTION_MAIN);
-                        a.addCategory(Intent.CATEGORY_HOME);
-                        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(a);
+                        Intent intent = new Intent(MainActivity.this, LauncherActivity.class);
+                        startActivity(intent);
+                        MainActivity.this.finish();
                     }
                 })
                 .setNegativeButton(getResources().getText(R.string.negative_button), new DialogInterface.OnClickListener() {

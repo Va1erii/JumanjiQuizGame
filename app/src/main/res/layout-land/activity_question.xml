@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:background="@drawable/bg_question_land"
+    tools:context="com.valeriipopov.jumanjiquiz.QuestionActivity">
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/health"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/hp_1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_alive"/>
+
+        <ImageView
+            android:id="@+id/hp_2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_alive"/>
+
+        <ImageView
+            android:id="@+id/hp_3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_alive"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="wrap_content"
+            android:text="@string/score"
+            android:textAlignment="center"
+            style="@style/TitleText"/>
+
+        <TextView
+            android:id="@+id/question_score"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            tools:text="0"
+            style="@style/SubTitleText"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line2"
+        android:layout_below="@id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgrondQuestion"
+        android:weightSum="10"
+        android:orientation="vertical"
+        android:scaleType="centerCrop">
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/asd"
+            style="@style/TextJumanjiQuestion"/>
+
+        <TextView
+            android:id="@+id/countQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Question 1/10"
+            style="@style/TextJumanjiQuote"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/answer"
+        android:layout_below="@id/line2"
+        android:layout_above="@id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:hint="@string/btn_answer_1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_gravity="start"
+                    android:background="@drawable/bg_quiz"
+                    android:text="@string/ruby"
+                    style="@style/TextJumanjiQuiz"/>
+
+                <RadioButton
+                    android:id="@+id/radio2"
+                    style="@style/TextJumanjiQuiz"
+                    android:hint="@string/btn_answer_2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/bg_quiz"
+                    android:text="@string/ruby"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio3"
+                    android:hint="@string/btn_answer_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/bg_quiz"
+                    android:text="@string/ruby"
+                    style="@style/TextJumanjiQuiz"/>
+
+                <RadioButton
+                    android:id="@+id/radio4"
+                    android:hint="@string/btn_answer_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bg_quiz"
+                    android:text="@string/ruby"
+                    style="@style/TextJumanjiQuiz"/>
+
+            </LinearLayout>
+
+        </RadioGroup>
+
+        <RelativeLayout
+            android:id="@+id/checkboxGroup"
+            android:layout_marginTop="10dp"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:weightSum="2"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkbox1"
+                    android:hint="@string/btn_answer_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ruby"
+                    style="@style/TextJumanjiQuiz"
+                    android:background="@drawable/bg_quiz"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox2"
+                    android:hint="@string/btn_answer_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ruby"
+                    style="@style/TextJumanjiQuiz"
+                    android:background="@drawable/bg_quiz"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:weightSum="2"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkbox3"
+                    android:hint="@string/btn_answer_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ruby"
+                    style="@style/TextJumanjiQuiz"
+                    android:background="@drawable/bg_quiz"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox4"
+                    android:hint="@string/btn_answer_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ruby"
+                    style="@style/TextJumanjiQuiz"
+                    android:background="@drawable/bg_quiz"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_next"
+        android:textAllCaps="true"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        style="@style/TextJumanji"
+        android:textColor="@color/colorTextSubTitle"/>
+
+</RelativeLayout>
