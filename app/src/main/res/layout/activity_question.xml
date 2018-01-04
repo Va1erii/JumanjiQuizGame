@@ -73,10 +73,9 @@
     <LinearLayout
         android:id="@+id/line2"
         android:layout_below="@id/line1"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="200dp"
+        android:layout_height="230dp"
         android:weightSum="10"
         android:orientation="vertical"
         android:background="@drawable/bg_quiz"
@@ -88,7 +87,7 @@
             android:layout_height="0dp"
             android:layout_weight="10"
             android:maxHeight="220dp"
-            android:text="@string/ruby"
+            android:text="@string/asd"
             style="@style/TextJumanjiQuestion"/>
 
         <TextView
@@ -109,10 +108,10 @@
 
         <RadioGroup
             android:id="@+id/radioGroup"
-            android:visibility="invisible"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp">
 
             <RadioButton

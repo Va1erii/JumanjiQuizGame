@@ -16,6 +16,7 @@ public class LauncherActivity extends AppCompatActivity {
     private TextView mTextViewQuote;
     private Handler mHandler;
     private String[] mJumangiQuote;
+    private LauncherActivityTask mTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +26,14 @@ public class LauncherActivity extends AppCompatActivity {
         mResources = getResources();
         mHandler = new Handler(getMainLooper());
         mJumangiQuote = mResources.getStringArray(R.array.jumangi_quote);
+        mTask = new LauncherActivityTask();
 
         mStartButton = findViewById(R.id.start_button);
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mTextViewQuote.setText("");
+                mStartButton.setClickable(false);
                 mStartButton.setTextColor(mResources.getColor(R.color.colorSelectTextJumanji));
                 mHandler.postDelayed(new Runnable() {
                     @Override
@@ -49,12 +52,7 @@ public class LauncherActivity extends AppCompatActivity {
                     }, time);
                     time += 500;
                 }
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        startActivity(new Intent(LauncherActivity.this, MainActivity.class));
-                    }
-                }, mJumangiQuote.length * 550);
+                mHandler.postDelayed(mTask, mJumangiQuote.length * 550);
             }
         });
     }
@@ -65,6 +63,14 @@ public class LauncherActivity extends AppCompatActivity {
         a.addCategory(Intent.CATEGORY_HOME);
         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(a);
+        mHandler.removeCallbacks(mTask);
         LauncherActivity.this.finish();
+    }
+
+    class LauncherActivityTask implements Runnable{
+        @Override
+        public void run() {
+            startActivity(new Intent(LauncherActivity.this, MainActivity.class));
+        }
     }
 }

@@ -9,34 +9,36 @@
     </style>
 
     <style name="TitleText">
-        <item name="android:fontFamily">@font/jumaji_font</item>
+        <item name="android:fontFamily">@font/jumanji_font</item>
         <item name="android:textColor">@color/colorTextTitle</item>
         <item name="android:textSize">50sp</item>
     </style>
 
     <style name="SubTitleText">
-        <item name="android:fontFamily">@font/jumaji_font</item>
+        <item name="android:fontFamily">@font/jumanji_font</item>
         <item name="android:textColor">@color/colorTextSubTitle</item>
         <item name="android:textSize">40sp</item>
     </style>
 
     <style name="HeroesName">
-        <item name="android:fontFamily">@font/jumaji_font</item>
+        <item name="android:fontFamily">@font/jumanji_font</item>
         <item name="android:textColor">@color/colorTextSubTitle</item>
         <item name="android:textSize">30sp</item>
     </style>
 
     <style name="HeroesCharacteristic">
-        <item name="android:fontFamily">@font/jumaji_font</item>
-        <item name="android:textColor">@color/colorTextSubTitle</item>
+        <item name="android:fontFamily">@font/jumanji_font</item>
+        <item name="android:textColor">@color/colorTextJumanji</item>
+        <item name="android:background">@color/colorBackgroundHeroes</item>
         <item name="android:textSize">19sp</item>
     </style>
 
     <style name="TextJumanjiQuestion">
-        <item name="android:fontFamily">@font/koookaburra</item>
+        <item name="android:fontFamily">casual</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorTextQuestion</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:textSize">40sp</item>
+        <item name="android:textSize">25sp</item>
     </style>
 
     <style name="TextJumanjiQuiz">
@@ -61,6 +63,18 @@
         <item name="android:paddingEnd">20dp</item>
         <item name="android:gravity">center</item>
         <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="TextJumanjiEndGame">
+        <item name="android:fontFamily">@font/koookaburra</item>
+        <item name="android:textColor">@color/colorTextJumanji</item>
+        <item name="android:background">@color/colorEndGame</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
     <style name="MyAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">

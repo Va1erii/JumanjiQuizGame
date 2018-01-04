@@ -14,14 +14,12 @@
 
     <TextView
         android:id="@+id/game_condition"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="@string/win_stage"
-        style="@style/TextJumanjiQuote"
-        android:textAlignment="center"
-        android:textAllCaps="true"
+        style="@style/TextJumanjiEndGame"
         android:textSize="60sp"
-        android:gravity="center"/>
+        android:layout_centerHorizontal="true"/>
 
     <LinearLayout
         android:layout_below="@id/game_condition"
