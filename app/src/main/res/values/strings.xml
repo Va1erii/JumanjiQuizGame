@@ -74,6 +74,8 @@
     <string name="quit">Are you sure that you want to quit the current stage?</string>
     <string name="positive_button">OK</string>
     <string name="negative_button">Cancel</string>
+    <string name="toast_score">Congratulations! Your score is: %d</string>
+    <string name="toast_game_over">Game Over! Your score is: %d\nTry again!</string>
 
     <!-- QuestionStage1-->
     <string-array name="question_stage_1">

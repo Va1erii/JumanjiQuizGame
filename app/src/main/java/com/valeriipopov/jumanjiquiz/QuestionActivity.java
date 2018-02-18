@@ -17,6 +17,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * QuestionActivity is our important activity where we show questions.
@@ -269,6 +270,7 @@ public class QuestionActivity extends AppCompatActivity {
                                 mHandler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
+                                        showToastScore();
                                         Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
                                         intent.putExtra(SCORE, mScore);
                                         intent.putExtra(CONDITION, GAME_WIN);
@@ -291,6 +293,7 @@ public class QuestionActivity extends AppCompatActivity {
                             mHandler.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
+                                    showToastScore();
                                     Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
                                     intent.putExtra(SCORE, mScore);
                                     intent.putExtra(CONDITION, GAME_WIN);
@@ -530,6 +533,7 @@ public class QuestionActivity extends AppCompatActivity {
                 mRadioButtons[i].setText(answers[i]);
                 mRadioButtons[i].setChecked(false);
             }
+            mRadioGroup.clearCheck();
             mAnswer = answers[4];
         }
         else {
@@ -541,6 +545,15 @@ public class QuestionActivity extends AppCompatActivity {
             }
             mAnswer = answers[4];
         }
+    }
+
+    private void showToastScore(){
+        if (mHealth > 0){
+            Toast.makeText(this, getString(R.string.toast_score, mScore), Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, getString(R.string.toast_game_over, mScore), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     /**
@@ -570,10 +583,16 @@ public class QuestionActivity extends AppCompatActivity {
                 mImageHP1.setImageDrawable(mResources.getDrawable(R.drawable.ic_dead));
                 mImageHP2.setImageDrawable(mResources.getDrawable(R.drawable.ic_dead));
                 mImageHP3.setImageDrawable(mResources.getDrawable(R.drawable.ic_dead));
-                Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
-                intent.putExtra(SCORE, mInitialScore);
-                intent.putExtra(CONDITION, GAME_LOSE);
-                startActivity(intent);
+                showToastScore();
+                mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
+                        intent.putExtra(SCORE, mScore);
+                        intent.putExtra(CONDITION, GAME_LOSE);
+                        startActivity(intent);
+                    }
+                }, 500);
                 break;
             case 1:
                 mImageHP2.setImageDrawable(mResources.getDrawable(R.drawable.ic_dead));

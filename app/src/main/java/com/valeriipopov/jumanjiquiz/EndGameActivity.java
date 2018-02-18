@@ -95,7 +95,6 @@ public class EndGameActivity extends AppCompatActivity {
                 mLayout.setBackground(mDrawable);
             }
             mConditionTextView.setText(mResources.getText(R.string.lose_game));
-            mScore = 0;
             mHandler.postDelayed(mTask, 3000);
         }
         mScoreTextView = findViewById(R.id.stage_score);
@@ -125,6 +124,9 @@ public class EndGameActivity extends AppCompatActivity {
     class EndGameActivityTask implements Runnable{
         @Override
         public void run() {
+            if (mCondition.equals(QuestionActivity.GAME_LOSE)){
+                mScore = 0;
+            }
             Intent intent = new Intent(EndGameActivity.this, MainActivity.class);
             intent.putExtra(QuestionActivity.SCORE, mScore);
             startActivity(intent);

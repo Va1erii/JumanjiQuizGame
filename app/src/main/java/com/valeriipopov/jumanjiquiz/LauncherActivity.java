@@ -54,7 +54,7 @@ public class LauncherActivity extends AppCompatActivity {
                             mTextViewQuote.append(mJumangiQuote[finalI] + " ");
                         }
                     }, time);
-                    time += 500;
+                    time += 400;
                 }
                 mHandler.postDelayed(mTask, mJumangiQuote.length * 550);
             }
