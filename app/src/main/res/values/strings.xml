@@ -168,7 +168,7 @@
         <item>Indian</item>
         <item>Pacific</item>
         <item>Arctic</item>
-        <item>C</item> <!-- Answer-->
+        <item>Pacific</item> <!-- Answer-->
     </string-array>
 
     <!-- QuestionStage2-->
@@ -264,7 +264,7 @@
         <item>Aikido</item>
         <item>Tae kwon do</item>
         <item>Judo</item>
-        <item>A</item> <!-- Answer-->
+        <item>Headong kumdo</item> <!-- Answer-->
     </string-array>
 
     <!-- QuestionStage3-->
@@ -358,7 +358,7 @@
         <item>Whale Shark</item>
         <item>Great White</item>
         <item>Bronze Whaler</item>
-        <item>B</item> <!-- Answer-->
+        <item>Whale Shark</item> <!-- Answer-->
     </string-array>
 
     <!-- QuestionStage4-->
@@ -452,8 +452,10 @@
         <item>Elf</item>
         <item>Human</item>
         <item>Cyclope</item>
-        <item>C</item> <!-- Answer-->
+        <item>Human</item> <!-- Answer-->
     </string-array>
+
+    <string name="content_health">Health</string>
 
     <!-- ActivityEndGame-->
 
@@ -461,6 +463,7 @@
     <string name="lose_game">Game Over</string>
     <string name="win_game">Jumanji is had defeated! You have saved the group and
         you can return to your home! But Jumanji is waiting it\'s time that it can come back!</string>
+    <string name="enter_your_answer">Enter your answer</string>
 
 
 </resources>

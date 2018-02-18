@@ -14,6 +14,8 @@
     <color name="colorBackgroundQuestion">#e2ebbc7a</color>
     <color name="colorBackgroundHeroes">#8e000000</color>
     <color name="colorEndGame">#44000000</color>
+    <color name="colorQuestionCorrect">#7dce2d</color>
+    <color name="colorQuestionWrong">#cf1e15</color>
 
 
 </resources>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,6 +23,7 @@
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/content_health"
             android:src="@drawable/ic_alive"/>
 
         <ImageView
@@ -32,6 +32,7 @@
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/content_health"
             android:src="@drawable/ic_alive"/>
 
         <ImageView
@@ -40,6 +41,7 @@
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/content_health"
             android:src="@drawable/ic_alive"/>
 
     </LinearLayout>
@@ -216,6 +218,17 @@
                 android:background="@drawable/bg_quiz"/>
 
         </LinearLayout>
+
+        <EditText
+            android:id="@+id/text_question"
+            android:hint="@string/enter_your_answer"
+            android:visibility="invisible"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            android:layout_margin="16dp"
+            android:background="@color/colorBackgroundQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </RelativeLayout>
 

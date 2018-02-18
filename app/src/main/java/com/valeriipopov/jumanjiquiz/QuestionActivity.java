@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -55,6 +56,7 @@ public class QuestionActivity extends AppCompatActivity {
     private ImageView mImageHP2;
     private ImageView mImageHP3;
     private Button mButtonNext;
+    private EditText mTextQuestion;
     private Resources mResources;
     private int mCount;
     private int mHealth;
@@ -76,6 +78,8 @@ public class QuestionActivity extends AppCompatActivity {
             mIsLandscape = true;
             // to check orientation
         }
+        mTextQuestion = findViewById(R.id.text_question);
+
         mImageHP1 = findViewById(R.id.hp_1);
         mImageHP2 = findViewById(R.id.hp_2);
         mImageHP3 = findViewById(R.id.hp_3);
@@ -123,11 +127,11 @@ public class QuestionActivity extends AppCompatActivity {
         mRadioButtons[2] = mRadioButton3;
         mRadioButtons[3] = mRadioButton4;
         if (mIsLandscape){
-            mCheckBoxGroup = (RelativeLayout) findViewById(R.id.checkboxGroup);
+            mCheckBoxGroup = findViewById(R.id.checkboxGroup);
             setRadioClickListener();
             // In landscape I used RelativeLayout
         } else {
-            mCheckBoxGroup = (LinearLayout) findViewById(R.id.checkboxGroup);
+            mCheckBoxGroup = findViewById(R.id.checkboxGroup);
         }
         mCheckBox1 = findViewById(R.id.checkbox1);
         mCheckBox2 = findViewById(R.id.checkbox2);
@@ -253,21 +257,20 @@ public class QuestionActivity extends AppCompatActivity {
                     }
                 }
                 else {
-                    // RadioButtons
-                    for (final RadioButton radioButton: mRadioButtons){
-                        if (radioButton.isChecked()){
-                            String choice = radioButton.getHint().toString();
-                            if (choice.equals(mAnswer)){
-                                mScore += 10;
-                                radioButton.setBackground(mResources.getDrawable(R.drawable.bg_quiz_correct));
-                                mHandler.postDelayed(new Runnable() {
+                    //TextQuestion
+                    String answer = mTextQuestion.getText().toString();
+                    if (answer.toLowerCase().equals(mAnswer.toLowerCase())){
+                        mScore += 10;
+                        mQuestionScore.setText(String.valueOf(mScore));
+                        mTextQuestion.setBackgroundColor(mResources.getColor(R.color.colorQuestionCorrect));
+                        mHandler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
-                                        radioButton.setBackground(mResources.getDrawable(R.drawable.bg_quiz));
+                                        mTextQuestion.setBackgroundColor(mResources.getColor(R.color.colorBackgroundQuestion));
                                         mQuestionScore.setText(String.valueOf(mScore));
                                     }
                                 }, 100);
-                                mHandler.postDelayed(new Runnable() {
+                        mHandler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
                                         showToastScore();
@@ -278,30 +281,30 @@ public class QuestionActivity extends AppCompatActivity {
                                         startActivity(intent);
                                     }
                                 }, 500);
+                    } else {
+                        mHealth--;
+                        mTextQuestion.setBackgroundColor(mResources.getColor(R.color.colorQuestionWrong));
+                        mHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                mTextQuestion.setBackgroundColor(mResources.getColor(R.color.colorBackgroundQuestion));
+                                mQuestionScore.setText(String.valueOf(mScore));
+                                checkHealth(mHealth);
                             }
-                            else {
-                                mHealth--;
-                                radioButton.setBackground(mResources.getDrawable(R.drawable.bg_quiz_wrong));
-                                mHandler.postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        radioButton.setBackground(mResources.getDrawable(R.drawable.bg_quiz));
-                                        checkHealth(mHealth);
-                                    }
-                                }, 100);
+                        }, 100);
+                    }
+                    if (mHealth > 0){
+                        mHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                showToastScore();
+                                Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
+                                intent.putExtra(SCORE, mScore);
+                                intent.putExtra(CONDITION, GAME_WIN);
+                                intent.putExtra(MainActivity.STAGE, mStage);
+                                startActivity(intent);
                             }
-                            mHandler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    showToastScore();
-                                    Intent intent = new Intent(QuestionActivity.this, EndGameActivity.class);
-                                    intent.putExtra(SCORE, mScore);
-                                    intent.putExtra(CONDITION, GAME_WIN);
-                                    intent.putExtra(MainActivity.STAGE, mStage);
-                                    startActivity(intent);
-                                }
-                            }, 500);
-                        }
+                        }, 500);
                     }
                 }
             }
@@ -526,7 +529,7 @@ public class QuestionActivity extends AppCompatActivity {
      * @param answers is array where we saved answer's choice. Our answer is in answer[4]
      */
     private void setRadioOrCheckBox (int numQuestion, String[] answers){
-        if (numQuestion < 5 || numQuestion > 7) {
+        if (numQuestion < 5 || numQuestion > 7 && numQuestion < 9) {
             mCheckBoxGroup.setVisibility(View.INVISIBLE);
             mRadioGroup.setVisibility(View.VISIBLE);
             for (int i = 0; i < mRadioButtons.length; i++){
@@ -534,6 +537,12 @@ public class QuestionActivity extends AppCompatActivity {
                 mRadioButtons[i].setChecked(false);
             }
             mRadioGroup.clearCheck();
+            mAnswer = answers[4];
+        }
+        else if (numQuestion == 9){
+            mRadioGroup.setVisibility(View.INVISIBLE);
+            mCheckBoxGroup.setVisibility(View.INVISIBLE);
+            mTextQuestion.setVisibility(View.VISIBLE);
             mAnswer = answers[4];
         }
         else {
